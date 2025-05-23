@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ProfessorXZamin  |Intro buddy </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: black;
+      color: #00ff88;
+      font-family: 'Orbitron', monospace;
+      overflow-x: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      text-shadow: 0 0 15px #00ff88;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88; }
+      to { text-shadow: 0 0 20px #00ffaa, 0 0 30px #00ff88; }
+    }
+
+    .typing {
+      font-size: 1.2em;
+      margin-top: 10px;
+      border-right: 2px solid #00ff88;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 0.8s step-end infinite;
+    }
+
+    @keyframes typing { to { width: 100%; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(0,255,100,0.05);
+      border: 1px solid #00ff88;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ff88aa;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffaa;
+      text-shadow: 0 0 10px #00ff88;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      padding: 8px 0;
+      border-bottom: 1px solid #00ff88;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 25px;
+      background: #00ff88;
+      color: #000;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 0 20px #00ff88;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00dd77;
+      box-shadow: 0 0 30px #00ff88;
+    }
+
+    footer {
+      text-align: center;
+      margin: 50px 0 20px;
+      font-size: 0.9em;
+      color: #888;
+      text-shadow: 0 0 10px #00ff88;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<header>
+  <h1>PROFESSORXZAMIN</h1>
+  <div class="typing">| Developer | Coder | Hacker | 23 Year Old Genius</div>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>I AM FATHER OF LOL HACKERS FUCK MY ALL HATERS IAM WEB DEVELOPER AND APP DEVELOPER BOTS DEVELOPER.</p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <ul>
+    <li>Expert in Hacking Tools</li>
+    <li>Graphics Deaigner</li>
+    <li>HTML, CSS, JavaScript</li>
+    <li>Termux Tools Expet</li>
+    <li>Mobile App Modding & Automation</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <ul>
+    <li>DARK BLADE TOOL</li>
+    <li>LOCATION TRACER TOOL</li>
+    <li>SIM DATABASE</li>
+    <li>Custom HTML-based TV Streaming App</li>
+    <li>MOBILE HACK WEB(Coming Soon)</li>
+  </ul>
+  <a href="https://whatsapp.com/channel/0029Vb3lrTJ7DAWyi2Ipjv3B" class="btn" target="_blank">Channel</a>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: @professorxzamin</p>
+  <p>Telegram: @PROXZAMIN</p>
+  <a href="https://wa.me/923405669673" class="btn" target="_blank">Contact Me</a>
+</section>
+
+<footer>
+  © 2025 PROFESSORXZAMIN| YOUR DAD
+</footer>
+
+<script>
+  // Matrix Background Effect
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  const letters = '101010100111000111001';
+  const fontSize = 16;
+  const columns = canvas.width / fontSize;
+  const drops = Array.from({ length: columns }).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#00ff88';
+    ctx.font = fontSize + 'px monospace';
+
+    drops.forEach((y, i) => {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, y * fontSize);
+      if (y * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    });
+  }
+
+  setInterval(drawMatrix, 33);
+</script>
+
+</body>
+</html>
+    
